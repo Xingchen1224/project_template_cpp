@@ -14,20 +14,18 @@ jobs:
       - name: Build on Linux.
         if: runner.os == 'Linux'
         run: |
-          ls
+          pwd
           echo Will build on ${{runner.os}}.
           sh build_unix.sh
           
       - name: Build on Windows.
         if: runner.os == 'Windows'
         run: |
-          ls
           echo Will build opencv on ${{runner.os}}.
           bat build_windows.bat
           
       - name: Build on macOS.
         if: runner.os == 'macOS'
         run: |
-          ls
           echo Will build opencv ${{ matrix.cv_version }} on ${{runner.os}}.
           sh build_unix.sh
