@@ -14,13 +14,12 @@ jobs:
       - name: Build on Linux.
         if: runner.os == 'Linux'
         run: |
-          chmod +x build_unix.sh
-          ./build_unix.sh
+          sh build_unix.sh
 
       - name: Build on Windows.
         if: runner.os == 'Windows'
         run: |
-          bat build_windows.bat
+          build_windows.bat
 
       - name: Build on macOS.
         if: runner.os == 'macOS'
